@@ -20,6 +20,7 @@ on:
   push:
     branches:
       - main
+      - axon/native-stack
       - branch-*
   pull_request:
 
