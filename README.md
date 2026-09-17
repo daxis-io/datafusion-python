@@ -19,6 +19,21 @@
 
 # DataFusion in Python
 
+## Daxis Axon native stack
+
+The maintained `axon/native-stack` branch builds the compatibility consumer for
+the Daxis native stack. Its package version `55.0.0+axon.1` identifies DataFusion
+55; it is a fork build, not an Apache release. The source parent is
+`2f528d2d53a550ba5434466e32af78b8c5bfac82`.
+
+The workspace pins DataFusion to Daxis revision
+`5791b64dd7ce8e72654f99534d3d8d9dacc41b6b`, Arrow to
+`e95302d431a14e3980fb75f5bdd26eb02e4b7a85`, and object_store to
+`98d8d82931cee1861bd500f2a09058ff31123c8a`. `Cargo.lock` records the resolved
+graph. Consumers must use the same DataFusion major when exchanging FFI table
+providers. Build a wheel with `maturin build --locked`; pin the compatibility
+source commit when installing from Git.
+
 [![Python test](https://github.com/apache/datafusion-python/actions/workflows/test.yaml/badge.svg)](https://github.com/apache/datafusion-python/actions/workflows/test.yaml)
 [![Python Release Build](https://github.com/apache/datafusion-python/actions/workflows/build.yml/badge.svg)](https://github.com/apache/datafusion-python/actions/workflows/build.yml)
 
